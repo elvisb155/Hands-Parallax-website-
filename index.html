@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Parallax Website Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="pimg1">
+    <div class="ptext">
+      <span class="border">
+        Musical Hands
+      </span>
+      <button id='startAudio'>Sup!</button>
+    </div>
+  </div>
+
+  <section class="section section-light">
+    <h2>Welcome</h2>
+    <p>
+      <br> Musical hands is an interactive website where the visitor can play a virtual instrument only with this hands.<br> <br>Music is played most of the times with the hands, so why can’t we use it with your webcam to make music? This is what Musical Hands gives you.., the chance to experiment and play around with the website, interacting with your hands, playing sounds and allowing you to discover the space of your screen.
+    </p>
+  </section>
+
+  <div class="pimg2">
+    <div class="ptext">
+      <span class="border trans">
+        How it works
+      </span>
+    </div>
+  </div>
+
+  <section class="section section-dark">
+    <h2>Instructions</h2>
+    <p>
+      <br>To begin using it, you need to allow access to your webcam in your browser. Click :allow” when asked if you want to give permission to access it.<br>
+
+      <br> Scroll down until you see the video of your camera and start moving your hand throughout the screen to begin triggering sounds.<br>
+
+      <br> Get familiarized with the locations of the sounds in your screen and start improvising as you wish!
+    </p>
+  </section>
+
+  <div class="pimg3">
+    <div class="ptext">
+      <span class="border trans">
+        Let's make some music together!
+      </span>
+    </div>
+  </div>
+
+  <section class="section section-dark">
+    <h2>Enjoy!</h2>
+   
+      <video id="video"></video>
+      <audio id="audio"></audio>
+      
+  </section>
+
+  <div class="pimg1">
+    <div class="ptext">
+      <span class="border">
+        Credits
+      </span>
+    </div>
+  </div>
+
+
+<section class="section section-dark">
+  <h2>Created by Elvis Bendana Rivas</h2>
+  <p>
+   <br> This is the final project for the class seminar MUS7746 Net Art at LSU. <br>
+<br>Thank you to Dr Jesse Allison for the great semester, advices and for immersing me into this fascinating world of website programming and Net Art.<br>
+<br>Thank you to my class colleagues, because I’ve learnt so much just by looking at their works and ideas and because of the great class environment.<br>
+<br>And thank you to DMA Andrian Harabaru for recoding the cello sounds in this website.
+
+  </p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"></script>
+<script src="app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"></script>
+
+</body>
+</html>
