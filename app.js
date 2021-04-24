@@ -2,8 +2,8 @@ const modelParams = {
     flipHorizontal: true,   // flip e.g for video 
     imageScaleFactor: 0.7,  // reduce input image size for gains in speed.
     maxNumBoxes: 1,        // maximum number of boxes to detect
-    iouThreshold: 0.5,      // ioU threshold for non-max suppression
-    scoreThreshold: 1.0    // confidence threshold for predictions.
+    iouThreshold: 0.1,      // ioU threshold for non-max suppression
+    scoreThreshold: 0.1    // confidence threshold for predictions.
   }
   
   navigator.getUserMedia = 
@@ -16,13 +16,26 @@ const modelParams = {
 
 const video = document.querySelector('#video');
 const audio = document.querySelector('#audio');
-// const player = new Tone.Player(,
+// const player = new Tone.Player("vc1.mp3",
 //     () => {
-//       player.start();
+//       // player.start();
 //     }
 //   ).toDestination();
-
 let model; 
+
+let player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12;
+player1 = new Tone.Player('vc1.mp3').toDestination();
+player2 = new Tone.Player('vc2.mp3').toDestination();
+player3 = new Tone.Player('vc3.mp3').toDestination();
+player4 = new Tone.Player('vc4.mp3').toDestination();
+player5 = new Tone.Player('vc5.mp3').toDestination();
+player6 = new Tone.Player('vc6.mp3').toDestination();
+player7 = new Tone.Player('vc7.mp3').toDestination();
+player8 = new Tone.Player('vc8.mp3').toDestination();
+player9 = new Tone.Player('vc9.mp3').toDestination();
+player10 = new Tone.Player('vc10.mp3').toDestination();
+player11 = new Tone.Player('vc11.mp3').toDestination();
+player12 = new Tone.Player('vc12.mp3').toDestination();
 
 function runDetection(){
   // console.log('detect')
@@ -33,23 +46,19 @@ function runDetection(){
       let y = hand1[1];
       console.log(x)
      
-      if (y > 200) {
-        if (x < 200) {
-          // player1.start()
-          audio.src = "https://elvisb155.github.io/NetArt-LSU/Audios/vc1.mp3";
-        } else if(x > 100){
-          // player2.start()
-          audio.src = "vc2.mp3";
-        } else if(x > 350){
-          audio.src = "vc3.mp3";
-        } else if(x > 300){
-          audio.src = "vc4.mp3";
-        } else if(x > 250){
-          audio.src = "vc10.mp3";
+      if (y > 100) {
+        if (x < 100) {
+          player1.start()
+        // } else if(x > 150){
+        //   player2.start()
         } else if(x > 200){
-          audio.src = "vc11.mp3";
-        } else if(x > 150){
-          audio.src = "vc12.mp3";
+          player3.start()
+        // } else if(x > 250){
+        //   player4.start()
+        } else if(x > 3000){
+          player5.start()
+        // } else if(x > 350){
+        //   player6.start()
         } 
       }
       //PLAY THE SOUND
@@ -81,24 +90,13 @@ handTrack.startVideo(video).then(status => {
 });
 
 
-// let player1, player2;
 
 
 
-// document.querySelector('#startAudio')?.addEventListener('click', async () => {
-// 	await Tone.start()
-// 	console.log('audio is ready')
-//   player1 = new Tone.Player("https://elvisb155.github.io/NetArt-LSU/Audios/vc1.mp3").toDestination();
-//   player2 = new Tone.Player('vc2.mp3').toDestination();
-//   player3 = new Tone.Player('vc2.mp3').toDestination();
-//   player4 = new Tone.Player('vc2.mp3').toDestination();
-//   player5 = new Tone.Player('vc2.mp3').toDestination();
-//   player6 = new Tone.Player('vc2.mp3').toDestination();
-//   player7 = new Tone.Player('vc2.mp3').toDestination();
-//   player8 = new Tone.Player('vc2.mp3').toDestination();
-//   player9 = new Tone.Player('vc2.mp3').toDestination();
-//   player10 = new Tone.Player('vc2.mp3').toDestination();
-//   player11 = new Tone.Player('vc2.mp3').toDestination();
-//   player12 = new Tone.Player('vc2.mp3').toDestination();
-// })
+
+document.querySelector('#startAudio')?.addEventListener('click', async () => {
+	await Tone.start()
+	console.log('audio is ready')
+ 
+})
   
