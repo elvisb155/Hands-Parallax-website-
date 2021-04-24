@@ -16,11 +16,12 @@ const modelParams = {
 
 const video = document.querySelector('#video');
 const audio = document.querySelector('#audio');
-// const player = new Tone.Player("vc1.mp3",
+// const player = new Tone.Player(,
 //     () => {
-//       // player.start();
+//       player.start();
 //     }
 //   ).toDestination();
+
 let model; 
 
 function runDetection(){
@@ -30,15 +31,15 @@ function runDetection(){
       let hand1 = predictions[0].bbox;
       let x = hand1[0];
       let y = hand1[1];
-      console.log(y)
+      console.log(x)
      
       if (y > 200) {
         if (x < 200) {
-          player1.start()
-          // audio.src = "vc1.mp3";
+          // player1.start()
+          audio.src = "https://elvisb155.github.io/NetArt-LSU/Audios/vc1.mp3";
         } else if(x > 100){
-          player2.start()
-          // audio.src = "vc2.mp3";
+          // player2.start()
+          audio.src = "vc2.mp3";
         } else if(x > 350){
           audio.src = "vc3.mp3";
         } else if(x > 300){
@@ -80,24 +81,24 @@ handTrack.startVideo(video).then(status => {
 });
 
 
-let player1, player2;
+// let player1, player2;
 
 
 
-document.querySelector('#startAudio')?.addEventListener('click', async () => {
-	await Tone.start()
-	console.log('audio is ready')
-  player1 = new Tone.Player("https://elvisb155.github.io/NetArt-LSU/Audios/vc1.mp3").toDestination();
-  player2 = new Tone.Player('vc2.mp3').toDestination();
-  player3 = new Tone.Player('vc2.mp3').toDestination();
-  player4 = new Tone.Player('vc2.mp3').toDestination();
-  player5 = new Tone.Player('vc2.mp3').toDestination();
-  player6 = new Tone.Player('vc2.mp3').toDestination();
-  player7 = new Tone.Player('vc2.mp3').toDestination();
-  player8 = new Tone.Player('vc2.mp3').toDestination();
-  player9 = new Tone.Player('vc2.mp3').toDestination();
-  player10 = new Tone.Player('vc2.mp3').toDestination();
-  player11 = new Tone.Player('vc2.mp3').toDestination();
-  player12 = new Tone.Player('vc2.mp3').toDestination();
-})
+// document.querySelector('#startAudio')?.addEventListener('click', async () => {
+// 	await Tone.start()
+// 	console.log('audio is ready')
+//   player1 = new Tone.Player("https://elvisb155.github.io/NetArt-LSU/Audios/vc1.mp3").toDestination();
+//   player2 = new Tone.Player('vc2.mp3').toDestination();
+//   player3 = new Tone.Player('vc2.mp3').toDestination();
+//   player4 = new Tone.Player('vc2.mp3').toDestination();
+//   player5 = new Tone.Player('vc2.mp3').toDestination();
+//   player6 = new Tone.Player('vc2.mp3').toDestination();
+//   player7 = new Tone.Player('vc2.mp3').toDestination();
+//   player8 = new Tone.Player('vc2.mp3').toDestination();
+//   player9 = new Tone.Player('vc2.mp3').toDestination();
+//   player10 = new Tone.Player('vc2.mp3').toDestination();
+//   player11 = new Tone.Player('vc2.mp3').toDestination();
+//   player12 = new Tone.Player('vc2.mp3').toDestination();
+// })
   
