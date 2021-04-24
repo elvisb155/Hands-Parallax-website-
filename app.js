@@ -59,7 +59,21 @@ function runDetection(){
           player5.start()
         // } else if(x > 350){
         //   player6.start()
-        } 
+        
+        } else if (y > 200) {
+         } else if (x < 100) {
+            player2.start()
+          // } else if(x > 150){
+          //   player2.start()
+          } else if(x > 200){
+            player4.start()
+          // } else if(x > 250){
+          //   player4.start()
+          } else if(x > 3000){
+            player6.start()
+          // } else if(x > 350){
+          //   player6.start()
+          } 
       }
       //PLAY THE SOUND
       audio.play();
