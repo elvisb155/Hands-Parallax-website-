@@ -87,7 +87,7 @@ let player1, player2;
 document.querySelector('#startAudio')?.addEventListener('click', async () => {
 	await Tone.start()
 	console.log('audio is ready')
-  player1 = new Tone.Player("https://elvisb155.github.io/Hands-Parallax-website-/blob/main/vc1.mp3").toDestination();
+  player1 = new Tone.Player("https://elvisb155.github.io/Hands-Parallax-website-/audios/vc1.mp3").toDestination();
   player2 = new Tone.Player('vc2.mp3').toDestination();
   player3 = new Tone.Player('vc2.mp3').toDestination();
   player4 = new Tone.Player('vc2.mp3').toDestination();
