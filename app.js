@@ -30,13 +30,13 @@ function runDetection(){
       let hand1 = predictions[0].bbox;
       let x = hand1[0];
       let y = hand1[1];
-      console.log(x)
+      console.log(y)
      
-      if (y > 300) {
+      if (y > 200) {
         if (x < 200) {
           player1.start()
           // audio.src = "vc1.mp3";
-        } else if(x > 400){
+        } else if(x > 100){
           player2.start()
           // audio.src = "vc2.mp3";
         } else if(x > 350){
@@ -87,7 +87,7 @@ let player1, player2;
 document.querySelector('#startAudio')?.addEventListener('click', async () => {
 	await Tone.start()
 	console.log('audio is ready')
-  player1 = new Tone.Player('https://github.com/elvisb155/Hands-Parallax-website-/blob/main/vc1.mp3?raw=true').toDestination();
+  player1 = new Tone.Player("https://elvisb155.github.io/Hands-Parallax-website-/blob/main/vc1.mp3").toDestination();
   player2 = new Tone.Player('vc2.mp3').toDestination();
   player3 = new Tone.Player('vc2.mp3').toDestination();
   player4 = new Tone.Player('vc2.mp3').toDestination();
