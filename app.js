@@ -37,6 +37,21 @@ player10 = new Tone.Player('vc10.mp3').toDestination();
 player11 = new Tone.Player('vc11.mp3').toDestination();
 player12 = new Tone.Player('vc12.mp3').toDestination();
 
+Tone.loaded().then(() => {
+  
+  
+})
+
+document.querySelector('#stop').addEventListener('click', () => {  
+  // players.stopAll();
+  player1.stop();
+  player2.stop();
+  player3.stop();
+  player4.stop();
+  player5.stop();
+
+})
+
 function runDetection(){
   // console.log('detect')
   model.detect(video) .then(predictions => {
@@ -47,26 +62,26 @@ function runDetection(){
       console.log(x)
      
       if (y > 100) {
-        if (x < 100) {
-          player1.start()
+        if (x < 0) {
+          // player1.start()
         // } else if(x > 150){
         //   player2.start()
         } else if(x > 200){
-          player3.start()
+          player2.start()
         // } else if(x > 250){
         //   player4.start()
         } else if(x > 3000){
-          player5.start()
+          player3.start()
         // } else if(x > 350){
         //   player6.start()
-        
+
         } else if (y > 200) {
          } else if (x < 100) {
-            player2.start()
+            player4.start()
           // } else if(x > 150){
           //   player2.start()
           } else if(x > 200){
-            player4.start()
+            player5.start()
           // } else if(x > 250){
           //   player4.start()
           } else if(x > 3000){
