@@ -73,16 +73,16 @@ function runDetection(){
       if (y > 100) {
         if (x < 100) {
           player1.start()
-        } else if(x > 200) {
+        } else if (x > 200) {
           player2.start()
-        } else if(x > 300) {
+        } else if (x > 300) {
           player3.start()
     } else if (y > 200) {
          } else if (x < 100) {
             player4.start()
-          } else if(x > 200) {
+          } else if (x > 200) {
             player5.start()
-          } else if(x > 300) {
+          } else if (x > 300) {
             player6.start()
           } 
       }
