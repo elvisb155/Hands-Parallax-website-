@@ -49,6 +49,13 @@ document.querySelector('#stop').addEventListener('click', () => {
   player3.stop();
   player4.stop();
   player5.stop();
+  player6.stop();
+  player7.stop();
+  player8.stop();
+  player9.stop();
+  player10.stop();
+  player11.stop();
+  player12.stop();
 
 })
 
