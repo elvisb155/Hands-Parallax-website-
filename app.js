@@ -1,9 +1,9 @@
 const modelParams = {
     flipHorizontal: true,   // flip e.g for video 
     imageScaleFactor: 0.7,  // reduce input image size for gains in speed.
-    maxNumBoxes: 1,        // maximum number of boxes to detect
-    iouThreshold: 0.1,      // ioU threshold for non-max suppression
-    scoreThreshold: 0.1    // confidence threshold for predictions.
+    maxNumBoxes: 2,        // maximum number of boxes to detect
+    iouThreshold: 1.1,      // ioU threshold for non-max suppression
+    scoreThreshold: 1.1    // confidence threshold for predictions.
   }
   
   navigator.getUserMedia = 
@@ -59,35 +59,24 @@ function runDetection(){
       let hand1 = predictions[0].bbox;
       let x = hand1[0];
       let y = hand1[1];
+      // let x = hand2[2];
+      // let y = hand2[3];
       console.log(x)
      
       if (y > 100) {
-        if (x < 0) {
-          // player1.start()
-        // } else if(x > 150){
-        //   player2.start()
-        } else if(x > 200){
+        if (x < 100) {
+          player1.start()
+        } else if(x > 200) {
           player2.start()
-        // } else if(x > 250){
-        //   player4.start()
-        } else if(x > 3000){
+        } else if(x > 300) {
           player3.start()
-        // } else if(x > 350){
-        //   player6.start()
-
-        } else if (y > 200) {
+    } else if (y > 200) {
          } else if (x < 100) {
             player4.start()
-          // } else if(x > 150){
-          //   player2.start()
-          } else if(x > 200){
+          } else if(x > 200) {
             player5.start()
-          // } else if(x > 250){
-          //   player4.start()
-          } else if(x > 3000){
+          } else if(x > 300) {
             player6.start()
-          // } else if(x > 350){
-          //   player6.start()
           } 
       }
       //PLAY THE SOUND
