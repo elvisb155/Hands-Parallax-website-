@@ -1,9 +1,9 @@
 const modelParams = {
   flipHorizontal: true,   // flip e.g for video 
   imageScaleFactor: 0.7,  // reduce input image size for gains in speed.
-  maxNumBoxes: 2,        // maximum number of boxes to detect
-  iouThreshold: 1.1,      // ioU threshold for non-max suppression
-  scoreThreshold: 1.1    // confidence threshold for predictions.
+  maxNumBoxes: 1,        // maximum number of boxes to detect
+  iouThreshold: 0.7,      // ioU threshold for non-max suppression
+  scoreThreshold: 0.7,    // confidence threshold for predictions.
 }
 
 navigator.getUserMedia = 
@@ -16,11 +16,7 @@ navigator.msGetUserMedia;
 
 const video = document.querySelector('#video');
 const audio = document.querySelector('#audio');
-// const player = new Tone.Player("vc1.mp3",
-//     () => {
-//       // player.start();
-//     }
-//   ).toDestination();
+
 let model; 
 
 let player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18, player19, player20, player21;
@@ -90,45 +86,114 @@ model.detect(video) .then(predictions => {
     let hand1 = predictions[0].bbox;
     let x = hand1[0];
     let y = hand1[1];
-    // let x = hand2[2];
-    // let y = hand2[3];
-    // console.log(x)
+    console.log(y, ", ", x)
    
     if (y > 100) {
-      console.log(y, ", ", x)
-      if (x < 100) {
+      // console.log(y, ", ", x)
+     if (x < 420) {
         if(player1.state === "stopped"){
           player1.start()
         }
-      } else if (x > 300) {
+      } else if (x > 350) {
+        if(player2.state === "stopped"){
+          player2.start()
+        }
+      } else if (x > 250) {
         if(player3.state === "stopped"){
           player3.start()
         }
-  } else if (y > 200) {
-    console.log(y, ", ", x)
-       } else if (x < 100) {
+      } else if (x > 190) {
         if(player4.state === "stopped"){
-         triggerPlayback(player4)
+          player4.start()
         }
-          // player4.start()
+      } else if (x > 120) {
+        if(player5.state === "stopped"){
+          player5.start()
+        }
+      } else if (x > 80) {
+        if(player6.state === "stopped"){
+          player6.start()
+        }
+      } else if (x > 40) {
+        if(player7.state === "stopped"){
+          player7.start()
+        }
+  } else if (y < 200) {
+    // console.log(y, ", ", x)
+       } else if (x < 100) {
+        if(player8.state === "stopped"){
+        //  triggerPlayback(player4)
+          player8.start()
+        }
         } else if (x > 200) {
-          if(player5.state === "stopped"){
-          triggerPlayback(player5);
+          if(player9.state === "stopped"){
+            player9.start()
+          }
+          // triggerPlayback(player5);
         } else if (x > 300) {
-          if(player6.state === "stopped"){
-          triggerPlayback(player6);
+          if(player10.state === "stopped"){
+            player10.start()
+          }
+        } else if (x > 350) {
+          if(player11.state === "stopped"){
+            player11.start()
+          }
+        } else if (x > 350) {
+          if(player12.state === "stopped"){
+            player12.start()
+          }
+        } else if (x > 350) {
+          if(player13.state === "stopped"){
+            player13.start()
+          }
+        } else if (x > 350) {
+          if(player14.state === "stopped"){
+            player14.start()
+          }
+        } else if (y < 300) {
+          // console.log(y, ", ", x)
+             } else if (x < 100) {
+              if(player15.state === "stopped"){
+              //  triggerPlayback(player4)
+                player15.start()
+              }
+              } else if (x > 200) {
+                if(player16.state === "stopped"){
+                  player16.start()
+                }
+                // triggerPlayback(player5);
+              } else if (x > 300) {
+                if(player17.state === "stopped"){
+                  player17.start()
+                }
+              } else if (x > 350) {
+                if(player18.state === "stopped"){
+                  player18.start()
+                }
+              } else if (x > 350) {
+                if(player19.state === "stopped"){
+                  player19.start()
+                }
+              } else if (x > 350) {
+                if(player20.state === "stopped"){
+                  player20.start()
+                }
+              } else if (x > 350) {
+                if(player21.state === "stopped"){
+                  player21.start()
+                }
+          // triggerPlayback(player6);
         } 
     }
     //PLAY THE SOUND
     // audio.play();
   }
 });
-}
-
-function triggerPlayback(player) {
-if(player.state === "stopped"){
-  player.start()
-}
+// }
+// function triggerPlayback(player) {
+// if(player.state === "stopped"){
+//   player.start()
+// }
 }
 
 console.log(handTrack)
@@ -144,7 +209,7 @@ if(status){
   navigator.getUserMedia({video: {}}, stream=> {
       video.srcObject = stream;
       //Run our detection
-          setInterval(runDetection, 250);
+          setInterval(runDetection, 100);
           console.log('Start Detection');
   },
   err => console.log(err)
@@ -157,8 +222,8 @@ if(status){
 
 
 
-document.querySelector('#startAudio')?.addEventListener('click', async () => {
-await Tone.start()
-console.log('audio is ready')
+// // document.querySelector('#startAudio')?.addEventListener('click', async () => {
+// // await Tone.start()
+// // console.log('audio is ready')
 
-})
+// });
